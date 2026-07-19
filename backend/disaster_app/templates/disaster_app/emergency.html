@@ -1,0 +1,119 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="form-container">
+
+            <h2>🚨 Emergency SOS</h2>
+
+            <p class="section-subtitle">
+                Submit an emergency request.
+            </p>
+
+            {% if success %}
+
+            <div class="success-message">
+
+                {{ success }}
+
+            </div>
+
+            {% endif %}
+
+            {% if error %}
+
+<div class="error-message">
+
+{{ error }}
+
+</div>
+
+{% endif %}
+
+{% if success %}
+
+<div class="success-message">
+
+{{ success }}
+
+</div>
+
+{% endif %}
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Current Location"
+                    required
+                >
+                <div class="form-group">
+
+<label>Pincode</label>
+
+<input
+type="text"
+name="pincode"
+maxlength="6"
+required>
+
+</div>
+
+                <select
+                    name="emergency_type"
+                    required
+                >
+
+                    <option value="">Select Emergency</option>
+
+                    <option>Flood</option>
+
+                    <option>Fire</option>
+
+                    <option>Earthquake</option>
+
+                    <option>Cyclone</option>
+
+                    <option>Medical</option>
+
+                </select>
+
+                <button
+                    class="primary-btn"
+                    type="submit"
+                >
+
+                    Send SOS
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

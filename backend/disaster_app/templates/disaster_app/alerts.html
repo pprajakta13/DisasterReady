@@ -1,0 +1,50 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+<div class="container">
+
+    <h2>🚨 Disaster Alerts</h2>
+
+    <p class="section-subtitle">
+        Stay updated with the latest disaster alerts.
+    </p>
+
+    {% if alerts %}
+
+        {% for alert in alerts %}
+
+        <div class="card" style="margin-bottom:20px;">
+
+            <h3>{{ alert.title }}</h3>
+
+            <p><strong>Disaster:</strong> {{ alert.disaster_type }}</p>
+
+            <p><strong>Severity:</strong> {{ alert.severity }}</p>
+
+            <p><strong>Location:</strong> {{ alert.location }}</p>
+
+            <p>{{ alert.description }}</p>
+
+            <small>{{ alert.created_at }}</small>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+            <h3>No Alerts Available</h3>
+            <p>There are currently no disaster alerts.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</section>
+
+{% endblock %}

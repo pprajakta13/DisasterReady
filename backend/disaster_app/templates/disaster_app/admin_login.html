@@ -1,0 +1,57 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+<div class="container">
+
+<div class="form-container">
+
+<h2>🛡 Admin Login</h2>
+
+<p class="section-subtitle">
+Administrator Access Only
+</p>
+
+{% if error %}
+
+<p style="color:red;text-align:center;">
+{{ error }}
+</p>
+
+{% endif %}
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input
+type="email"
+name="email"
+placeholder="Admin Email"
+required
+>
+
+<input
+type="password"
+name="password"
+placeholder="Password"
+required
+>
+
+<button class="primary-btn">
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

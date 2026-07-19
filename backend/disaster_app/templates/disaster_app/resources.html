@@ -1,0 +1,62 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+<div class="container">
+
+    <h2>🏥 Available Resources</h2>
+
+    <p class="section-subtitle">
+        Find nearby hospitals, shelters, food camps and emergency services.
+    </p>
+
+    {% if resources %}
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Address</th>
+                <th>Contact</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for resource in resources %}
+
+            <tr>
+
+                <td>{{ resource.name }}</td>
+                <td>{{ resource.resource_type }}</td>
+                <td>{{ resource.address }}</td>
+                <td>{{ resource.contact }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+        <div class="info-box">
+            <h2>🏥</h2>
+            <p>No resources available.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+<div class="container">
+
+    <h2>
+        👋 Welcome, {{ name }}
+    </h2>
+
+    <p class="section-subtitle">
+        Stay Prepared • Stay Safe • DisasterReady Dashboard
+    </p>
+
+    <!-- Statistics -->
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h1>{{ alert_count }}</h1>
+            <h4>🚨 Alerts</h4>
+            <p>Live Disaster Alerts</p>
+        </div>
+
+        <div class="card">
+            <h1>{{ resource_count }}</h1>
+            <h4>🏥 Resources</h4>
+            <p>Available Help Centers</p>
+        </div>
+
+        <div class="card">
+            <h1>{{ history_count }}</h1>
+            <h4>📜 SOS History</h4>
+            <p>Your Requests</p>
+        </div>
+
+        <div class="card">
+            <h1>{{ emergency_count }}</h1>
+            <h4>🚑 Emergency</h4>
+            <p>Total Emergencies</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2>Quick Actions</h2>
+
+    <div class="card-grid">
+
+        <a href="/alerts/" class="card">
+            🚨
+            <br><br>
+            View Alerts
+        </a>
+
+        <a href="/emergency/" class="card">
+            🚑
+            <br><br>
+            Send SOS
+        </a>
+
+        <a href="/resources/" class="card">
+            🏥
+            <br><br>
+            Find Resources
+        </a>
+
+        <a href="/checklist/" class="card">
+            📋
+            <br><br>
+            Safety Checklist
+        </a>
+
+    </div>
+
+    <br><br>
+
+    <h2>My Account</h2>
+
+    <div class="card-grid">
+
+        <a href="/profile/" class="card">
+            👤
+            <br><br>
+            Profile
+        </a>
+
+        <a href="/history/" class="card">
+            📜
+            <br><br>
+            My SOS History
+        </a>
+
+        <a href="/logout/" class="card">
+            
+            <br><br>
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

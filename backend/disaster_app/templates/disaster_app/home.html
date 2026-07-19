@@ -1,0 +1,182 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<!-- =======================
+        HERO
+======================= -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <h1>🌍 Natural Disaster Preparedness Portal</h1>
+
+            <p>
+                Prepared Today, Safe Tomorrow
+            </p>
+
+            <div class="hero-buttons">
+
+               <a href="/register/" class="primary-btn">
+    Get Started
+</a>
+<a href="/alerts/" class="secondary-btn">
+    View Alerts
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================
+        ALERTS
+======================= -->
+
+<section id="alerts" class="section">
+
+    <div class="container">
+
+        <h2>🚨 Live Disaster Alerts</h2>
+
+        <p class="section-subtitle">
+            Stay updated with the latest emergency alerts.
+        </p>
+
+        <div class="card-grid">
+
+            <div class="alert-card flood">
+
+                <h3>🌊 Flood Alert</h3>
+
+                <p>Heavy rainfall expected in nearby areas.</p>
+
+                <span class="status high">High Risk</span>
+
+            </div>
+
+            <div class="alert-card fire">
+
+                <h3>🔥 Fire Alert</h3>
+
+                <p>Forest fire warning in western region.</p>
+
+                <span class="status medium">Medium Risk</span>
+
+            </div>
+
+            <div class="alert-card cyclone">
+
+                <h3>🌪 Cyclone Alert</h3>
+
+                <p>Strong winds expected in coastal areas.</p>
+
+                <span class="status high">High Risk</span>
+
+            </div>
+
+            <div class="alert-card earthquake">
+
+                <h3>🌍 Earthquake Alert</h3>
+
+                <p>No recent seismic activity detected.</p>
+
+                <span class="status low">Safe</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================
+        CHECKLIST
+======================= -->
+
+<section id="checklist" class="section">
+
+    <div class="container">
+
+        <h2>📋 Preparedness Checklist</h2>
+
+        <div class="card-grid">
+
+            <div class="card">✔ Water</div>
+
+            <div class="card">✔ Food</div>
+
+            <div class="card">✔ Torch</div>
+
+            <div class="card">✔ First Aid Kit</div>
+
+            <div class="card">✔ Medicines</div>
+
+            <div class="card">✔ Emergency Numbers</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================
+        RESOURCES
+======================= -->
+
+<section id="resources" class="section">
+
+    <div class="container">
+
+        <h2>📍 Resource Locator</h2>
+
+        <div class="card-grid">
+
+            <div class="card">🏥 Hospitals</div>
+
+            <div class="card">🏠 Shelters</div>
+
+            <div class="card">🚓 Police Stations</div>
+
+            <div class="card">🚒 Fire Stations</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================
+        CONTACT
+======================= -->
+
+<section id="contact" class="section">
+
+    <div class="container">
+
+        <h2>📞 Emergency Contacts</h2>
+
+        <div class="card-grid">
+
+            <div class="card">☎ 112</div>
+
+            <div class="card">🚑 108</div>
+
+            <div class="card">🚒 101</div>
+
+            <div class="card">👮 100</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

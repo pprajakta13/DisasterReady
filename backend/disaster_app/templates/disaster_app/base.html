@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DisasterReady</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container navbar">
+
+        <div class="logo">
+            🛡️ DisasterReady
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="/">Home</a></li>
+
+                {% if request.session.admin_id %}
+
+                    <li><a href="/admin-dashboard/">Admin Dashboard</a></li>
+                    <li><a href="/logout/">Logout</a></li>
+
+                {% elif request.session.user_id %}
+
+                    <li><a href="/dashboard/">Dashboard</a></li>
+                    <li><a href="/alerts/">Alerts</a></li>
+                    <li><a href="/checklist/">Checklist</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/emergency/">Emergency SOS</a></li>
+                    <li><a href="/history/">History</a></li>
+                    <li><a href="/notifications/">🔔 Notifications</a></li>
+                    <li><a href="/profile/">Profile</a></li>
+                    <li><a href="/logout/">Logout</a></li>
+
+                {% else %}
+
+                    <li><a href="/alerts/">Alerts</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+
+                {% endif %}
+
+            </ul>
+
+        </nav>
+
+        <div class="buttons">
+
+            {% if not request.session.user_id and not request.session.admin_id %}
+
+                <a href="/login/">
+                    <button class="login-btn">
+                        Login
+                    </button>
+                </a>
+
+                <a href="/register/">
+                    <button class="register-btn">
+                        Register
+                    </button>
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<footer>
+
+    <div class="container">
+
+        © 2026 DisasterReady | Prepared Today, Safe Tomorrow
+
+    </div>
+
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+{% extends 'disaster_app/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+<div class="container">
+
+<h2 style="text-align:center;margin-bottom:40px;">
+📜 My Emergency History
+</h2>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Emergency</th>
+<th>Location</th>
+<th>Status</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for sos in sos_requests %}
+
+<tr>
+
+<td>{{ sos.emergency_type }}</td>
+
+<td>{{ sos.location }}</td>
+
+<td>
+
+{% if sos.status == "Pending" %}
+
+<span style="color:#ff9800;font-weight:bold;">
+🟠 Pending
+</span>
+
+{% elif sos.status == "In Progress" %}
+
+<span style="color:#2196F3;font-weight:bold;">
+🔵 In Progress
+</span>
+
+{% elif sos.status == "Resolved" %}
+
+<span style="color:#28a745;font-weight:bold;">
+🟢 Resolved
+</span>
+
+{% else %}
+
+{{ sos.status }}
+
+{% endif %}
+
+</td>
+
+<td>
+
+{{ sos.created_at }}
+
+</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="4" style="padding:25px;text-align:center;">
+
+No Emergency Requests Found.
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+{% endblock %}
